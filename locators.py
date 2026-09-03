@@ -74,3 +74,6 @@ LOGOUT_BUTTON = (By.XPATH, "//button[text()='Выход']")
 
 # Текст профиля 
 PROFILE_TEXT = (By.XPATH, "//p[text()='В этом разделе вы можете изменить свои персональные данные']")
+
+# Кнопка «Оформить заказ» (в корзине)
+ORDER_SUBMIT_BUTTON = (By.XPATH, "//button[text()='Оформить заказ']")
