@@ -1,40 +1,35 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.by import By
 from locators import *
 
-def test_navigate_to_sauces(driver):
-    driver.find_element(*SECTION_SAUCES).click()
-    
-    WebDriverWait(driver, 7).until(
-        EC.text_to_be_present_in_element(
-            (By.CSS_SELECTOR, "span.text.text_type_main-default"), "Соусы"
+class TestNavigateSections:
+
+    def test_navigate_to_sauces(self, driver):
+        driver.find_element(*SECTION_SAUCES).click()
+
+        WebDriverWait(driver, 7).until(
+            EC.visibility_of_element_located(TAB_HEADER_SAUCES)
         )
-    )
-    element = driver.find_element(By.CSS_SELECTOR, "span.text.text_type_main-default")
-    assert "Соусы" in element.text
 
+        element = driver.find_element(*TAB_HEADER_SAUCES)
+        assert element.text == "Соусы"
 
-def test_navigate_to_buns(driver):
-    driver.find_element(*SECTION_BUNS).click()
+    def test_navigate_to_buns(self, driver):
+        driver.find_element(*SECTION_BUNS).click()
 
-    WebDriverWait(driver, 7).until(
-        EC.text_to_be_present_in_element(
-            (By.CSS_SELECTOR, "span.text.text_type_main-default"), "Булки"
+        WebDriverWait(driver, 7).until(
+            EC.visibility_of_element_located(TAB_HEADER_BUNS)
         )
-    )
-    element = driver.find_element(By.CSS_SELECTOR, "span.text.text_type_main-default")
-    assert "Булки" in element.text
 
+        element = driver.find_element(*TAB_HEADER_BUNS)
+        assert element.text == "Булки"
 
-def test_navigate_to_fillings(driver):
-    driver.find_element(*SECTION_FILLINGS).click()
+    def test_navigate_to_fillings(self, driver):
+        driver.find_element(*SECTION_FILLINGS).click()
 
-    WebDriverWait(driver, 7).until(
-        EC.text_to_be_present_in_element(
-            (By.CSS_SELECTOR, "span.text.text_type_main-default"), "Начинки"
+        WebDriverWait(driver, 7).until(
+            EC.visibility_of_element_located(TAB_HEADER_FILLINGS)
         )
-    )
-    element = driver.find_element(By.CSS_SELECTOR, "span.text.text_type_main-default")
-    assert "Начинки" in element.text
-    
+
+        element = driver.find_element(*TAB_HEADER_FILLINGS)
+        assert element.text == "Начинки"
