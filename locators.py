@@ -76,4 +76,13 @@ LOGOUT_BUTTON = (By.XPATH, "//button[text()='Выход']")
 PROFILE_TEXT = (By.XPATH, "//p[text()='В этом разделе вы можете изменить свои персональные данные']")
 
 # Кнопка «Оформить заказ» (в корзине)
-ORDER_SUBMIT_BUTTON = (By.XPATH, "//button[text()='Оформить заказ']")
+ORDER_SUBMIT_BUTTON = (By.XPATH, "//button[text()='Оформить заказ']")                 
+
+# Заголовок "Булки" (H2)
+TAB_HEADER_BUNS = (By.XPATH, "//h2[text()='Булки']")
+
+# Заголовок "Соусы" (H2)
+TAB_HEADER_SAUCES = (By.XPATH, "//h2[text()='Соусы']")
+
+# Заголовок "Начинки" (H2)
+TAB_HEADER_FILLINGS = (By.XPATH, "//h2[text()='Начинки']")
