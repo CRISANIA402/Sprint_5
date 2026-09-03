@@ -14,11 +14,8 @@ def test_logout(driver):
     driver.find_element(*LOGIN_SUBMIT_BUTTON).click()
     
     WebDriverWait(driver, 5).until(
-        expected_conditions.text_to_be_present_in_element(
-            (By.XPATH, "//button"), "Оформить заказ"
-        )
+        expected_conditions.text_to_be_present_in_element(ORDER_SUBMIT_BUTTON, "Оформить заказ")
     )
-    
     driver.find_element(*PERSONAL_ACCOUNT_BUTTON).click()
     WebDriverWait(driver, 3).until(
         expected_conditions.visibility_of_element_located(PROFILE_TEXT)
